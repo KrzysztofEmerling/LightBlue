@@ -1,7 +1,7 @@
 <p align="center">
   <img src="docs/assets/LightBlue-logo.png" alt="LightBlue" height="160">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/assets/sknf-bozon.png" alt="SKNF Bozon" height="160">
+  <img src="docs/assets/sknf-bozon.jpg" alt="SKNF Bozon" height="160">
 </p>
 
 <h1 align="center">LightBlue</h1>
