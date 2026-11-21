@@ -1,5 +1,6 @@
-# Po kazdej zmianie issues przelicza postep modulow (etykiety module:<nazwa>)
-# i aktualizuje tabele w PLAN_PROJEKTU.md (sekcja 7).
+# Po kazdej zmianie issues przelicza postep modulow (prefiks [modul] w tytule)
+# i aktualizuje tresc przypietego issue "Postęp modułów". Niczego nie commituje.
+# Zmiany wykonane przez GITHUB_TOKEN nie uruchamiaja workflow ponownie (brak petli).
 name: Postęp modułów
 
 on:
@@ -8,8 +9,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  issues: read
+  issues: write
+  contents: read
 
 concurrency:
   group: progress
@@ -22,15 +23,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Przelicz postęp
-        run: python3 .github/scripts/update_progress.py PLAN_PROJEKTU.md
+        run: python3 .github/scripts/update_progress.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit zmian
-        run: |
-          git diff --quiet && exit 0
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "docs: aktualizacja postępu modułów [skip ci]"
-          git pull --rebase
-          git push

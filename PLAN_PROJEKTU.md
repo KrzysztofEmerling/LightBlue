@@ -152,6 +152,8 @@ Do podglądu i układania bitboardów używamy wizualizatora:
 - API:
   - `void setFen(std::string_view)`, `std::string toFen() const`
   - `void make(Move)`, `void unmake(Move)`
+  - `void makeNull()`, `void unmakeNull()` - ruch zerowy dla null move pruning w search
+  - `std::string toString() const` - plansza w ASCII + FEN, dla komendy `d` w UCI
   - `Color sideToMove() const`
   - `bool inCheck() const`, `bool isKingInCheck(Color) const`
   - `Bitboard attackersTo(Square s, Bitboard occupancy) const` - używane przez board i movegen
@@ -320,22 +322,10 @@ Jedynym kamieniem milowym jest **działający silnik** (gra legalne szachy w GUI
 Mniejszych etapów nie stosujemy - pracę dzielą moduły. Każde zadanie = jedno issue (1-3 dni pracy)
 z nazwą modułu w tytule: `[<moduł>] Opis zadania` (np. `[core] Operacje bitowe`).
 
-<!-- progress:start -->
-| Moduł | Postęp | % | Zamknięte / wszystkie |
-| ----- | ------ | - | --------------------- |
-| [`core`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bcore%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 6 |
-| [`attacks`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Battacks%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 4 |
-| [`board`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bboard%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 9 |
-| [`movegen`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bmovegen%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 8 |
-| [`eval`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Beval%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 2 |
-| [`search`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bsearch%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 6 |
-| [`uci`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Buci%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 6 |
-| [`app`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bapp%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | - | 0 / 0 |
-| **Działający silnik** | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 41 |
-<!-- progress:end -->
-
-Tabelę aktualizuje automatycznie workflow `.github/workflows/progress.yml` po każdej zmianie issues
-(otwarcie, zamknięcie, zmiana etykiet). Liczone są issues z prefiksem `[<moduł>]` w tytule
+Postęp każdego modułu pokazuje przypięte issue
+**[#45 Postęp modułów](https://github.com/KrzysztofEmerling/LightBlue/issues/45)**. Jego treść aktualizuje
+automatycznie workflow `.github/workflows/progress.yml` po każdej zmianie issues (otwarcie, edycja,
+zamknięcie, zmiana etykiet) - bez commitów na `main`. Liczone są issues z prefiksem `[<moduł>]` w tytule
 lub etykietą `module:<nazwa>`, bez pull requestów i bez issues z etykietą `epic`. Ręczne przeliczenie: *Actions -> Postęp modułów -> Run workflow*.
 
 ---
@@ -348,6 +338,8 @@ lub etykietą `module:<nazwa>`, bez pull requestów i bez issues z etykietą `ep
 - **Definition of Done:** testy przechodzą, kod sformatowany `clang-format`, review innej osoby,
   autor potrafi wyjaśnić każdą linijkę swojego kodu.
 - Decyzje architektoniczne zapisywane jako ADR w `docs/adr/`.
+- Gałąź `main` jest chroniona: zmiany wyłącznie przez PR z własnej gałęzi (np. `core/kodowanie-ruchu`),
+  review właściciela kodu (`.github/CODEOWNERS`) wymagane do scalenia.
 
 ---
 
