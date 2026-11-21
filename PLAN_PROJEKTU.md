@@ -323,7 +323,7 @@ z nazwą modułu w tytule: `[<moduł>] Opis zadania` (np. `[core] Operacje bitow
 <!-- progress:start -->
 | Moduł | Postęp | % | Zamknięte / wszystkie |
 | ----- | ------ | - | --------------------- |
-| [`core`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bcore%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 5 |
+| [`core`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bcore%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 6 |
 | [`attacks`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Battacks%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 4 |
 | [`board`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bboard%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 9 |
 | [`movegen`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bmovegen%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 8 |
@@ -331,7 +331,6 @@ z nazwą modułu w tytule: `[<moduł>] Opis zadania` (np. `[core] Operacje bitow
 | [`search`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bsearch%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 6 |
 | [`uci`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Buci%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 6 |
 | [`app`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bapp%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | - | 0 / 0 |
-| [`infra`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Binfra%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 1 |
 | **Działający silnik** | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 41 |
 <!-- progress:end -->
 
