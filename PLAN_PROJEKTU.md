@@ -325,14 +325,14 @@ z nazwą modułu w tytule: `[<moduł>] Opis zadania` (np. `[core] Operacje bitow
 | ----- | ------ | - | --------------------- |
 | [`core`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bcore%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 5 |
 | [`attacks`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Battacks%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 4 |
-| [`board`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bboard%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 8 |
-| [`movegen`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bmovegen%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | - | 0 / 0 |
+| [`board`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bboard%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 9 |
+| [`movegen`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bmovegen%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 7 |
 | [`eval`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Beval%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | - | 0 / 0 |
 | [`search`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bsearch%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | - | 0 / 0 |
 | [`uci`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Buci%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | - | 0 / 0 |
 | [`app`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Bapp%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | - | 0 / 0 |
 | [`infra`](https://github.com/KrzysztofEmerling/LightBlue/issues?q=is%3Aissue+%22%5Binfra%5D%22+in%3Atitle) | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 1 |
-| **Działający silnik** | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 18 |
+| **Działający silnik** | `░░░░░░░░░░░░░░░░░░░░` | 0% | 0 / 26 |
 <!-- progress:end -->
 
 Tabelę aktualizuje automatycznie workflow `.github/workflows/progress.yml` po każdej zmianie issues
