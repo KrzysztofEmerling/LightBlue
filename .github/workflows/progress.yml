@@ -1,0 +1,36 @@
+# Po kazdej zmianie issues przelicza postep modulow (etykiety module:<nazwa>)
+# i aktualizuje tabele w PLAN_PROJEKTU.md (sekcja 7).
+name: Postęp modułów
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled, deleted, transferred]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: progress
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Przelicz postęp
+        run: python3 .github/scripts/update_progress.py PLAN_PROJEKTU.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit zmian
+        run: |
+          git diff --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "docs: aktualizacja postępu modułów [skip ci]"
+          git pull --rebase
+          git push

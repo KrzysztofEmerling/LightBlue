@@ -1,0 +1,80 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "ENGINE_INFO": "ON",
+        "ENGINE_LOG_LEVEL": "1",
+        "ENGINE_SANITIZERS": "OFF",
+        "ENGINE_FAST_MATH": "ON",
+        "ENGINE_TESTS": "ON",
+        "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "OFF"
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug + ASan/UBSan",
+      "description": "-O0 -g, sanitizery, pelne logowanie",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENGINE_LOG_LEVEL": "3",
+        "ENGINE_SANITIZERS": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "description": "-O3 -ffast-math (Ofast) + LTO, logowanie wlaczone",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON"
+      }
+    },
+    {
+      "name": "dist",
+      "displayName": "Dist (fast)",
+      "description": "release bez logowania i bez testow - do pomiarow sily gry",
+      "inherits": "release",
+      "cacheVariables": { "ENGINE_INFO": "OFF", "ENGINE_TESTS": "OFF" }
+    },
+    {
+      "name": "dist-small",
+      "displayName": "Dist (small)",
+      "description": "-Os + LTO, bez logowania i bez testow",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel",
+        "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON",
+        "ENGINE_INFO": "OFF",
+        "ENGINE_TESTS": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "debug",      "configurePreset": "debug" },
+    { "name": "release",    "configurePreset": "release" },
+    { "name": "dist",       "configurePreset": "dist" },
+    { "name": "dist-small", "configurePreset": "dist-small" }
+  ],
+  "testPresets": [
+    {
+      "name": "debug",
+      "description": "Codzienne testy (bez test_suite(\"slow\"))",
+      "configurePreset": "debug",
+      "output": { "outputOnFailure": true },
+      "filter": { "exclude": { "label": "slow" } }
+    },
+    {
+      "name": "release",
+      "description": "Wszystkie testy, razem z wolnymi (gleboki perft)",
+      "configurePreset": "release",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}

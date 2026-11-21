@@ -1,0 +1,8 @@
+# Dane do tests/example/example_test.cpp
+# <bitboard hex> <oczekiwany popcount>
+0 0
+1 1
+FF 8
+FF00000000000000 8
+8100000000000081 4
+FFFFFFFFFFFFFFFF 64

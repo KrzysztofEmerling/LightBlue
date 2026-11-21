@@ -1,0 +1,44 @@
+# Wspolny styl formatowania LightBlue (clang-format 16+).
+# Formatowanie:  clang-format -i <pliki>   albo   cmake --build --preset debug --target format
+# Sprawdzenie:   cmake --build --preset debug --target format-check
+---
+Language: Cpp
+BasedOnStyle: Google
+Standard: c++20
+
+IndentWidth: 4
+ContinuationIndentWidth: 4
+AccessModifierOffset: -4
+ColumnLimit: 100
+UseTab: Never
+
+# Klamra otwierajaca zawsze w tej samej linii (funkcje, klasy, if, petle...)
+BreakBeforeBraces: Attach
+
+# Komentarzy nie ruszamy: bez przelamywania, wyrownywania ani dopisywania
+ReflowComments: false
+AlignTrailingComments:
+  Kind: Leave
+FixNamespaceComments: false
+SpacesBeforeTrailingComments: 2
+
+# Krotkie konstrukcje w jednej linii tylko gdy sa puste / bardzo proste
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Empty
+
+PointerAlignment: Left
+DerivePointerAlignment: false
+
+# Kolejnosc #include: wlasny naglowek, engine/, biblioteki zewnetrzne, standardowa
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^<engine/'
+    Priority: 2
+  - Regex: '^<doctest/'
+    Priority: 3
+  - Regex: '^<[a-z_]+>$'
+    Priority: 4
+  - Regex: '.*'
+    Priority: 3
