@@ -7,7 +7,7 @@
 <h1 align="center">LightBlue</h1>
 
 <p align="center">
-  Silnik szachowy w C++20, rozwijany w&nbsp;ramach <b>SKNF Bozon</b>
+  Projekt silnika szachowego w C++20, rozwijany w&nbsp;ramach <b>SKNF Bozon</b>
 </p>
 
 ---
