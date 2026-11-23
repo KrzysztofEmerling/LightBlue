@@ -1,7 +1,7 @@
 <p align="center">
   <img src="docs/assets/LightBlue-logo.png" alt="LightBlue" height="160">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/assets/sknf-bozon.jpg" alt="SKNF Bozon" height="160">
+  <img src="docs/assets/sknf-bozon.png" alt="SKNF Bozon" height="160">
 </p>
 
 <h1 align="center">LightBlue</h1>
@@ -19,6 +19,9 @@
 1. **Zbudować silnik szachowy**, który komunikuje się przez protokół UCI i gra w dowolnym GUI.
 2. **Sprawdzić, jak wybrane decyzje projektowe wpływają na siłę gry**, czyli porównać warianty (reprezentację planszy, generator pseudolegalny lub legalny, techniki przeszukiwania, ewaluację) i mierzyć różnice testami SPRT.
 3. **Dowiedzieć się, jak działają silniki szachowe**: od bitboardów i generowania ruchów po alfa-betę i tablice transpozycji.
+
+Plan projektu wraz z informacjami o zadaniach i postępie prac znajduje się na tablicy
+**[GitHub Project](https://github.com/users/KrzysztofEmerling/projects/8/views/7?groupedBy%5BcolumnId%5D=447227562)**.
 
 ## Budowanie
 

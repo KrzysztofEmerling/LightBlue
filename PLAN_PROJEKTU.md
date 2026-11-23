@@ -322,12 +322,6 @@ Jedynym kamieniem milowym jest **działający silnik** (gra legalne szachy w GUI
 Mniejszych etapów nie stosujemy - pracę dzielą moduły. Każde zadanie = jedno issue (1-3 dni pracy)
 z nazwą modułu w tytule: `[<moduł>] Opis zadania` (np. `[core] Operacje bitowe`).
 
-Postęp każdego modułu pokazuje przypięte issue
-**[#45 Postęp modułów](https://github.com/KrzysztofEmerling/LightBlue/issues/45)**. Jego treść aktualizuje
-automatycznie workflow `.github/workflows/progress.yml` po każdej zmianie issues (otwarcie, edycja,
-zamknięcie, zmiana etykiet) - bez commitów na `main`. Liczone są issues z prefiksem `[<moduł>]` w tytule
-lub etykietą `module:<nazwa>`, bez pull requestów i bez issues z etykietą `epic`. Ręczne przeliczenie: *Actions -> Postęp modułów -> Run workflow*.
-
 ---
 
 ## 8. Organizacja pracy (GitHub Project)
